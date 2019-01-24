@@ -2,17 +2,18 @@ import tweepy
 from textblob import TextBlob
 
 #Create your app from apps.twitter.com and fill your keys
-consumer_key = '3KFL*************'
-consumer_secret = 'yltO********************'
-access_token = '3014895**************'
-access_token_secret = 'w7rZ********************'
+consumer_key = 'xyz'
+consumer_secret = 'xyz'
+access_token = 'xyz'
+access_token_secret = 'xyz'
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
 
 api = tweepy.API(auth)
 
-public_tweets = api.search('Narendra Modi')
+#asks user for input. Makes program more usable. 
+public_tweets = api.search(input("Enter keyword(s)"))
 
 for tweet in public_tweets:
 	print(tweet.text)
